@@ -299,7 +299,7 @@ class QuranScreen extends StatelessWidget {
                         color: Theme.of(context).primaryColor,
                         width: 2.5,
                         height: 60,
-                        margin: const EdgeInsets.only(left: 10),
+                        margin: const EdgeInsets.only(left: 21),
                       ),
                       Expanded(
                         child: Text(
