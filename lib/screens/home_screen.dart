@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  List<Widget> tabs =  [QuranScreen() , const HadithScreen() , const SebihaScreen() , const RadioScreen()];
+  List<Widget> tabs =  [QuranScreen() , HadithScreen() , const SebihaScreen() , const RadioScreen()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
