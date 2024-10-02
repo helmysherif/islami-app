@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/screens/hadith_details.dart';
 import 'package:islami_app/screens/hadith_model.dart';
 class HadithScreen extends StatefulWidget {
   const HadithScreen({super.key});
@@ -28,7 +29,13 @@ class _HadithScreenState extends State<HadithScreen> {
               ),
               itemBuilder: (context , index){
                 return InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.pushNamed(
+                      context,
+                      HadithDetails.routeName,
+                      arguments: allhadith[index]
+                    );
+                  },
                   child: Text(
                     allhadith[index].title,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(color:Colors.black),
