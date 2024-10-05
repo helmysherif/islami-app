@@ -292,7 +292,7 @@ class QuranScreen extends StatelessWidget {
                       Expanded(
                         child: Text(
                           suraNames[index] ,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),
                           textAlign: TextAlign.center
                       )),
                       Container(
@@ -304,7 +304,7 @@ class QuranScreen extends StatelessWidget {
                       Expanded(
                         child: Text(
                           "${suraNumbers[index]}",
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),
                           textAlign: TextAlign.center
                       )),
                     ],

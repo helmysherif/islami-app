@@ -10,7 +10,10 @@ class HadithDetails extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-           image: AssetImage("assets/images/bg3.png"),
+           image: AssetImage(
+             // "assets/images/bg3.png"
+             "assets/images/dark_bg.png",
+           ),
            fit: BoxFit.fill
         )
       ),

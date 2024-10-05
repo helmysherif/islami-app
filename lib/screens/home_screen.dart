@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  List<Widget> tabs =  [QuranScreen() , HadithScreen() , const SebihaScreen() , const RadioScreen()];
+  List<Widget> tabs =  [QuranScreen() , const HadithScreen() , const SebihaScreen() , const RadioScreen()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -20,7 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             width: double.infinity,
             child: Image.asset(
-              "assets/images/bg3.png",
+              // "assets/images/bg3.png",
+              "assets/images/dark_bg.png",
               fit: BoxFit.fill,
             ),
           ),

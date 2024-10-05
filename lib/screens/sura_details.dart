@@ -41,10 +41,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 child: Text(
                   "${verses[index]}${index + 1}",
                   textAlign:TextAlign.center,
-                  style: GoogleFonts.elMessiri(
-                    fontSize: 23,
-                    color: const Color(0xff242424)
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               )
             );

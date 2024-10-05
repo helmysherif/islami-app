@@ -38,7 +38,7 @@ class _HadithScreenState extends State<HadithScreen> {
                   },
                   child: Text(
                     allhadith[index].title,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(color:Colors.black),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 20),
                     textAlign: TextAlign.center,
                   ),
                 );
