@@ -3,6 +3,7 @@ import 'package:islami_app/screens/hadith.dart';
 import 'package:islami_app/screens/quran_screen.dart';
 import 'package:islami_app/screens/radio.dart';
 import 'package:islami_app/screens/sebiha.dart';
+import 'package:islami_app/screens/settings_screen.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "quran_screen";
   HomeScreen({super.key});
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  List<Widget> tabs =  [QuranScreen() , const HadithScreen() , const SebihaScreen() , const RadioScreen()];
+  List<Widget> tabs =  [QuranScreen() , const HadithScreen() , const SebihaScreen() , const RadioScreen() , const SettingsScreen()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,6 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: "Radio",
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.settings),
+                  label: "Settings",
+                  backgroundColor: Theme.of(context).primaryColor,
+                )
               ],
             ),
           ),
