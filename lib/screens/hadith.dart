@@ -21,7 +21,7 @@ class _HadithScreenState extends State<HadithScreen> {
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context , index) => Divider(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.secondary,
                 thickness: 2,
                 indent: 20,
                 endIndent: 20,

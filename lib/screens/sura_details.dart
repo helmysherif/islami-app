@@ -17,9 +17,13 @@ class _SuraDetailsState extends State<SuraDetails> {
       loadFile(args.index);
     }
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/bg3.png"),
+          image: AssetImage(
+            Theme.of(context).colorScheme.brightness == Brightness.dark
+                ? "assets/images/dark_bg.png"
+                : "assets/images/bg3.png",
+          ),
           fit: BoxFit.fill
         )
       ),

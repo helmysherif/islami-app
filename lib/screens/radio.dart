@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/settings_provider.dart';
 class RadioScreen extends StatelessWidget {
   const RadioScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -15,17 +19,17 @@ class RadioScreen extends StatelessWidget {
             Icon(
               Icons.arrow_left,
               size: 60,
-              color: Theme.of(context).primaryColor
+              color: Theme.of(context).colorScheme.secondary
             ),
             Icon(
               Icons.play_arrow,
               size: 70,
-              color: Theme.of(context).primaryColor
+              color: Theme.of(context).colorScheme.secondary
             ),
             Icon(
               Icons.arrow_right,
               size: 60,
-              color: Theme.of(context).primaryColor
+              color: Theme.of(context).colorScheme.secondary
             )
           ],
         )

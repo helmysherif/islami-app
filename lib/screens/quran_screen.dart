@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/screens/sura_details.dart';
 import 'package:islami_app/screens/sura_details_args.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/settings_provider.dart';
 class QuranScreen extends StatelessWidget {
   QuranScreen({super.key});
   List<String> suraNames = [
@@ -237,30 +241,40 @@ class QuranScreen extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset("assets/images/quranbg.png"),
         const SizedBox(height:20),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           thickness: 3,
           height: 0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("إسم السورة" , style: Theme.of(context).textTheme.bodyMedium),
+            Expanded(child: Text(
+              AppLocalizations.of(context)!.suraName ,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center
+            )),
             Container(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.secondary,
               width: 2.5,
               height: 50,
+              // margin: const EdgeInsets.only(left: 40),
             ),
-            Text("عدد الآيات" , style: Theme.of(context).textTheme.bodyMedium),
+            Expanded(child: Text(
+              AppLocalizations.of(context)!.suraNumber ,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center
+            )),
           ],
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           thickness: 3,
           height: 0,
         ),
@@ -269,7 +283,7 @@ class QuranScreen extends StatelessWidget {
           child: ListView.separated(
             separatorBuilder:(context , index) =>
               Divider(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.secondary,
                 thickness: 2,
                 // indent: 30,
                 // endIndent: 30,
@@ -296,10 +310,10 @@ class QuranScreen extends StatelessWidget {
                           textAlign: TextAlign.center
                       )),
                       Container(
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.secondary,
                         width: 2.5,
                         height: 60,
-                        margin: const EdgeInsets.only(left: 21),
+                        // margin: const EdgeInsets.only(left: 21),
                       ),
                       Expanded(
                         child: Text(

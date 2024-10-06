@@ -46,10 +46,10 @@ class MyThemeData{
           color: Colors.white
       )
     ),
-    colorScheme: ColorScheme(
+    colorScheme: const ColorScheme(
       primary: lightColor,
       onPrimary: Colors.black54,
-      secondary: Colors.grey.shade300,
+      secondary: lightColor,
       onSecondary: Colors.black,
       error: Colors.red,
       onError: Colors.white,

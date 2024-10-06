@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/settings_provider.dart';
 class SebihaScreen extends StatefulWidget {
   const SebihaScreen({super.key});
   @override
@@ -10,6 +13,7 @@ class _SebihaScreenState extends State<SebihaScreen> {
   int currentSebihaIndex = 0;
   @override
   Widget build(BuildContext context) {
+    SettingProvider provider = Provider.of<SettingProvider>(context);
     return Center(
       child: Column(
         children: [
@@ -26,11 +30,13 @@ class _SebihaScreenState extends State<SebihaScreen> {
               }
               setState(() {});
             },
-            child: Image.asset("assets/images/Group 8.png")
+            child: Image.asset(
+                provider.themeMode == ThemeMode.light ? "assets/images/Group 8.png" : "assets/images/sebha_dark.png"
+            )
           ),
           const SizedBox(height: 30),
           Text("عدد التسبيحات" , style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            color: Colors.black
+            color: Theme.of(context).colorScheme.secondary
           )),
           const SizedBox(height: 20),
           Container(
@@ -44,7 +50,7 @@ class _SebihaScreenState extends State<SebihaScreen> {
               child: Text(
                 "$index",
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  color: Colors.black,
+                  color: provider.themeMode == ThemeMode.light ? Colors.black : Colors.white,
                   fontSize: 25
                 ),
               ),

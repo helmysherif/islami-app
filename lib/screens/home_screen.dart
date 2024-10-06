@@ -4,15 +4,26 @@ import 'package:islami_app/screens/quran_screen.dart';
 import 'package:islami_app/screens/radio.dart';
 import 'package:islami_app/screens/sebiha.dart';
 import 'package:islami_app/screens/settings_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "quran_screen";
-  HomeScreen({super.key});
+
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  List<Widget> tabs =  [QuranScreen() , const HadithScreen() , const SebihaScreen() , const RadioScreen() , const SettingsScreen()];
+  List<Widget> tabs = [
+    QuranScreen(),
+    const HadithScreen(),
+    const SebihaScreen(),
+    const RadioScreen(),
+    const SettingsScreen()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -21,47 +32,50 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             width: double.infinity,
             child: Image.asset(
-              // "assets/images/bg3.png",
-              "assets/images/dark_bg.png",
+              Theme.of(context).colorScheme.brightness == Brightness.dark
+                  ? "assets/images/dark_bg.png"
+                  : "assets/images/bg3.png",
               fit: BoxFit.fill,
             ),
           ),
           Scaffold(
             appBar: AppBar(
               title: Text(
-                "إسلامي",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontWeight: FontWeight.bold
-                ),
+                AppLocalizations.of(context)!.appTitle,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
             ),
             body: tabs[index],
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: index,
-              onTap:(int value){
+              onTap: (int value) {
                 index = value;
                 setState(() {});
               },
               items: [
                 BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage("assets/images/quran.png")),
-                  label: "Quran",
+                  label: AppLocalizations.of(context)!.quarn,
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
                 BottomNavigationBarItem(
-                  icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),
-                  label: "Hadith",
+                  icon:
+                      const ImageIcon(AssetImage("assets/images/ahadeth.png")),
+                  label: AppLocalizations.of(context)!.hadith,
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
                 BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage("assets/images/sebha.png")),
-                  label: "Sebiha",
+                  label: AppLocalizations.of(context)!.sebha,
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
                 BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage("assets/images/radio.png")),
-                  label: "Radio",
+                  label: AppLocalizations.of(context)!.radio,
                   backgroundColor: Theme.of(context).primaryColor,
                 ),
                 BottomNavigationBarItem(
