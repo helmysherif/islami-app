@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/settings_provider.dart';
+
 class ShowLanguageBottomSheet extends StatelessWidget {
   const ShowLanguageBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<SettingProvider>(context);
@@ -14,7 +16,7 @@ class ShowLanguageBottomSheet extends StatelessWidget {
         child: Column(
           children: [
             InkWell(
-              onTap: (){
+              onTap: () {
                 provider.changeLanguage("en");
                 Navigator.pop(context);
               },
@@ -23,21 +25,30 @@ class ShowLanguageBottomSheet extends StatelessWidget {
                   Text(
                     "English",
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: provider.language == 'en' ? Theme.of(context).colorScheme.secondary : Colors.white
-                    ),
+                        color: provider.language == 'en'
+                            ? Theme.of(context).colorScheme.secondary
+                            : provider.themeMode == ThemeMode.light
+                                ? Colors.black54
+                                : Colors.white),
                   ),
                   const Spacer(),
-                  provider.language == 'en' ? Icon(
-                    Icons.check,
-                    color: provider.language == 'en' ? Theme.of(context).colorScheme.secondary : Colors.white,
-                    size: 30,
-                  ) : Container()
+                  provider.language == 'en'
+                      ? Icon(
+                          Icons.check,
+                          color: provider.language == 'en'
+                              ? Theme.of(context).colorScheme.secondary
+                              : provider.themeMode == ThemeMode.light
+                                  ? Colors.black54
+                                  : Colors.white,
+                          size: 30,
+                        )
+                      : Container()
                 ],
               ),
             ),
             const SizedBox(height: 10),
             InkWell(
-              onTap: (){
+              onTap: () {
                 provider.changeLanguage("ar");
                 Navigator.pop(context);
               },
@@ -46,15 +57,25 @@ class ShowLanguageBottomSheet extends StatelessWidget {
                   Text(
                     "Arabic",
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: provider.language == 'ar' ? Theme.of(context).colorScheme.secondary : Colors.white,
-                    ),
+                          color: provider.language == 'ar'
+                              ? Theme.of(context).colorScheme.secondary
+                              : provider.themeMode == ThemeMode.light
+                                  ? Colors.black54
+                                  : Colors.white,
+                        ),
                   ),
                   const Spacer(),
-                  provider.language == 'ar' ? Icon(
-                    Icons.check,
-                    color: provider.language == 'ar' ? Theme.of(context).colorScheme.secondary : Colors.white ,
-                    size: 30,
-                  ) : Container()
+                  provider.language == 'ar'
+                      ? Icon(
+                          Icons.check,
+                          color: provider.language == 'ar'
+                              ? Theme.of(context).colorScheme.secondary
+                              : provider.themeMode == ThemeMode.light
+                                  ? Colors.black54
+                                  : Colors.white,
+                          size: 30,
+                        )
+                      : Container()
                 ],
               ),
             )

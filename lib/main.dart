@@ -8,8 +8,11 @@ import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (BuildContext context) => SettingProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SettingProvider()),
+        // ChangeNotifierProvider(create: (context) => SuraDetailsProvider()),
+      ],
       child: const MyApp()
     )
   );

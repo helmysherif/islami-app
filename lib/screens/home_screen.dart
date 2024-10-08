@@ -7,23 +7,19 @@ import 'package:islami_app/screens/settings_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "quran_screen";
-
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   List<Widget> tabs = [
     QuranScreen(),
-    const HadithScreen(),
+    HadithScreen(),
     const SebihaScreen(),
     const RadioScreen(),
     const SettingsScreen()
   ];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

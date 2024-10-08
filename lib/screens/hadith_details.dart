@@ -37,7 +37,7 @@ class HadithDetails extends StatelessWidget {
               child: Text(args.content,
                   textDirection: TextDirection.rtl,
                   style: GoogleFonts.elMessiri(
-                      fontSize: 23, color: Colors.white),
+                      fontSize: 23, color: Theme.of(context).colorScheme.secondary),
                   textAlign: TextAlign.center),
             ),
           ),
